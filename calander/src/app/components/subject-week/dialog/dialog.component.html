@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <p>הכנס נושא שבועי</p>
+  <!-- <mat-form-field appearance="fill">
+    <mat-label>Favorite Animal</mat-label> -->
+    <input matInput [(ngModel)]="name" #inputField (keyup.enter)="onNoClick()" autofocus>
+
+  <!-- </mat-form-field> -->
+</div>
+<div mat-dialog-actions>
+  <button mat-button  cdkFocusInitial (click)="onNoClick()" [mat-dialog-close]="name">אישור</button>
+</div>

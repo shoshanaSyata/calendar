@@ -1,0 +1,24 @@
+<div mat-dialog-content>
+  <span mat-dialog-title>העלה קובץ</span>
+  <!-- <mat-form-field appearance="fill">
+      <mat-label>Favorite Animal</mat-label> -->
+  <!-- <input matInput  #inputField (keyup.enter)="onNoClick()" autofocus> -->
+
+  <!-- </mat-form-field> -->
+
+
+
+  <button type="button" mat-raised-button (click)="fileInput.click()">בחר קובץ</button>
+  <input hidden (change)="onFileChange($event)" #fileInput type="file">
+  <br>
+  <span class="file-name">{{selectedFile?.name}}</span>
+  
+
+
+
+
+  <!-- <input   type="file" (change)="onFileChange($event)" /> -->
+</div>
+<div mat-dialog-actions>
+  <button mat-button cdkFocusInitial (click)="onNoClick()">אישור</button>
+</div>

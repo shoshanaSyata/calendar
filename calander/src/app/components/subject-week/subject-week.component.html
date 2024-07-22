@@ -1,0 +1,11 @@
+<div class="subjectWeek">
+  <span *ngIf="this.name; else elseBlock">
+    <button class="week" mat-raised-button (click)="openDialog()">{{ this.name }}</button>
+  </span>
+
+  <ng-template #elseBlock>
+    <button mat-raised-button (click)="openDialog()">הכנס נושא שבועי</button>
+  </ng-template>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span class="subject">{{ subject }}</span>
+</div>

@@ -1,0 +1,118 @@
+<!-- <mwl-calendar-week-view [viewDate]="viewDate">
+    <ng-template mwlWeekCellTemplate let-date="date">
+      <div class="cal-cell-top">
+        <span class="cal-day-number">{{ date.date | hebrewDate }}</span>
+      </div>
+    </ng-template>
+  </mwl-calendar-week-view> -->
+
+<!-- <ng-template mwlWeekCellTemplate let-date="date">
+    <div class="cal-cell-top">
+      <span class="cal-day-number">{{ date | hebrewDate }}</span>
+    </div>
+  </ng-template> -->
+
+<button
+  mat-button
+  class="button"
+  (click)="moveToNextWeek()"
+  style="vertical-align: middle"
+>
+  <span class="Next">שבוע הבא</span>
+</button>
+
+<button
+  mat-button
+  class="button"
+  (click)="moveToToday()"
+  style="vertical-align: middle"
+>
+  היום
+</button>
+
+<button
+  mat-button
+  class="button"
+  (click)="moveToPreviousWeek()"
+  style="vertical-align: middle"
+>
+  <span class="Previous">שבוע קודם</span>
+</button>
+
+<!-- <mwl-calendar-week-view
+  [hourSegmentHeight]="100"
+>
+</mwl-calendar-week-view> -->
+
+<!-- (hourSegmentClicked)="openDialog($event)" -->
+
+<mwl-calendar-week-view
+  [viewDate]="viewDate"
+  dir="rtl"
+  [hourSegments]="1"
+  [dayStartHour]="0"
+  [dayEndHour]="4"
+  [hourSegmentHeight]="100"
+  [events]="events"
+  [hourSegmentTemplate]="weekView"
+>
+</mwl-calendar-week-view>
+
+<ng-template
+  #weekView
+  let-segment="segment"
+  let-locale="locale"
+  let-segmentHeight="segmentHeight"
+  let-isTimeLabel="isTimeLabel"
+>
+  <div class="cal-hour-segment" [style.height.px]="segmentHeight">
+    <div *ngIf="!isTimeLabel" class="cal-hour-segment" style="height: 100px">
+
+      <button mat-raised-button (click)="openDialog(segment)" color="green" type="submit">
+        <mat-icon color="#BDD6AC">note_add</mat-icon>
+      </button>
+    </div>
+
+    <div *ngIf="isTimeLabel" class="cal-time" style="height: 100px">
+      <p>{{ header[segment.date.getHours()] }}</p>
+    </div>
+  </div>
+</ng-template>
+
+<!-- <mwl-calendar-week-view [viewDate]="viewDate"
+
+  [events]="events"
+  >
+  </mwl-calendar-week-view> -->
+<!-- [hourSegments]="24" -->
+
+<!-- [dayEndHour]="8"
+  [dayStartHour]="8" -->
+
+<!-- <mwl-calendar-week-view [viewDate]="viewDate">
+    <ng-template #weekViewHeader>
+      <div class="cal-week-view-header"></div>
+    </ng-template>
+    <ng-template #weekViewEvent
+                 let-weekEvent="weekEvent"
+                 let-day="day">
+      <div class="cal-event">
+        {{ weekEvent.event.title }}
+      </div>
+    </ng-template> -->
+<!-- Customize day view to show only dates without time slots -->
+<!-- <ng-template #dayView
+                 let-day="day">
+      <div class="cal-day-view">
+        <div class="cal-day-headers">
+          <div class="cal-header"></div>
+        </div>
+        <div class="cal-day-events">
+          <div class="cal-day-event" *ngFor="let event of day.events">
+             {{ event.event.title }}
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </mwl-calendar-week-view>
+   -->

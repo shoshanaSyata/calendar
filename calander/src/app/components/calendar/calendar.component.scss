@@ -1,0 +1,64 @@
+
+
+
+.cal-current-time-marker {
+  display: none;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #49f41e4d;
+  border: none;
+  // color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button .Previous:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover .Previous {
+  padding-right: 25px;
+}
+
+.button:hover .Previous:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button .Next:after {
+  content: "\00ab";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.button:hover .Next {
+  padding-left: 25px;
+}
+
+.button:hover .Next:after {
+  opacity: 1;
+  left: 0;
+}
